@@ -100,29 +100,29 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="px-5 pb-10 sm:px-8">
+    <footer className="px-5 pb-10 sm:px-8 text-white">
       <div className="mx-auto w-full max-w-6xl">
         {/* Upper Call to Action Panel */}
-        <div className="surface-panel p-6 sm:p-10 lg:p-12 rounded-3xl border border-border shadow-card mb-8">
+        <div className="surface-panel p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/15 shadow-2xl mb-8">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-center">
             <div>
-              <p className="label-mono">Initiative Leadership</p>
-              <h2 className="mt-3 text-2xl font-extrabold sm:text-4xl text-foreground tracking-tight">
+              <p className="label-mono">// INITIATIVE LEADERSHIP</p>
+              <h2 className="mt-3 text-2xl font-extrabold sm:text-4xl text-white tracking-tight">
                 {personalInfo.tagline}
               </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
                 Developing technology solutions across healthcare workflows, engineering student education, and community social impact.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-bold transition-all duration-300 bg-primary text-white px-5 py-2.5 shadow-accent hover:bg-primary-hover arrow-nudge"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-mono uppercase tracking-widest font-bold transition-all duration-300 bg-cyan-400 text-black px-5 py-3 hover:bg-white shadow-[0_0_20px_rgba(0,240,255,0.3)] arrow-nudge"
                   href="#contact"
                 >
                   <span>Connect With Me</span>
                   <ArrowRight className="size-3.5" />
                 </a>
                 <a
-                  className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-300 border border-border bg-white text-foreground px-4 py-2.5 hover:bg-surface arrow-nudge"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-mono uppercase tracking-widest font-semibold transition-all duration-300 border border-white/20 bg-slate-900/50 text-white px-4 py-3 hover:bg-white hover:text-black arrow-nudge"
                   href="#aiiens"
                 >
                   <span>Explore AIIENS</span>
@@ -140,20 +140,20 @@ export default function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group flex items-center gap-3 rounded-xl border border-border bg-white p-3 transition-all duration-300 hover:border-primary/50 hover:shadow-soft"
+                    className="group flex items-center gap-3 rounded-xl border border-white/15 bg-slate-900/80 p-3 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-900"
                   >
-                    <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-surface text-primary transition-transform duration-300 group-hover:scale-105 group-hover:bg-accent-soft">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-slate-950 text-cyan-400 border border-white/10 transition-transform duration-300 group-hover:scale-105 group-hover:bg-cyan-500/10">
                       <Icon className="size-4" />
                     </span>
                     <div className="min-w-0 flex-1">
-                      <span className="block truncate text-xs font-bold text-foreground">
+                      <span className="block truncate text-xs font-bold text-white">
                         {item.title}
                       </span>
-                      <span className="block truncate font-mono text-[10px] text-muted-foreground">
+                      <span className="block truncate font-mono text-[10px] text-slate-400">
                         {item.handle}
                       </span>
                     </div>
-                    <ArrowUpRight className="size-3.5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <ArrowUpRight className="size-3.5 shrink-0 text-slate-400 group-hover:text-cyan-400 transition-colors" />
                   </a>
                 );
               })}
@@ -162,12 +162,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal / Nav */}
-        <div className="flex flex-col gap-5 pt-4 border-t border-border/60 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <nav aria-label="Footer Navigation" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-medium sm:justify-start">
+        <div className="flex flex-col gap-5 pt-4 border-t border-white/10 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <nav aria-label="Footer Navigation" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono uppercase tracking-wider text-xs font-medium sm:justify-start">
             {footerNav.map((link) => (
               <a
                 key={link.name}
-                className="hover:text-primary transition-colors py-0.5"
+                className="hover:text-cyan-400 transition-colors py-0.5"
                 href={link.href}
               >
                 {link.name}
@@ -176,10 +176,10 @@ export default function Footer() {
           </nav>
 
           <div className="flex flex-col items-center gap-1 text-center sm:items-end sm:text-right">
-            <p className="font-mono font-medium text-foreground">
+            <p className="font-mono font-medium text-slate-300">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
-            <p className="font-mono text-[11px] text-muted-foreground">
+            <p className="font-mono text-[11px] text-slate-400">
               {aiiensBrand.expansion}
             </p>
           </div>

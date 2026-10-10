@@ -86,78 +86,78 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-28 px-5 py-16 sm:px-8 sm:py-24 pt-0">
+    <section id="contact" className="scroll-mt-28 px-5 py-16 sm:px-8 sm:py-24 pt-0 text-white">
       <div className="mx-auto w-full max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
           {/* Contact Left Description */}
           <div>
-            <p className="label-mono mb-2">Get In Touch</p>
-            <h2 className="text-3xl font-extrabold sm:text-5xl text-foreground tracking-tight">
+            <p className="label-mono mb-2">// GET IN TOUCH</p>
+            <h2 className="text-3xl font-extrabold sm:text-5xl text-white tracking-tight">
               Connect With Me
             </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400 sm:text-base">
               Whether you are looking to explore healthcare workflow tools, collaborate on engineering education, or discuss technology-driven initiatives, I would love to connect.
             </p>
 
             <div className="mt-8 space-y-4">
               {/* Founder Info Card */}
-              <div className="p-5 rounded-2xl bg-surface border border-border space-y-3">
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3">
                 <div className="flex items-center gap-2">
-                  <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-mono text-xs font-bold text-foreground">
-                    {personalInfo.name} — {personalInfo.designation}
+                  <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <span className="font-mono text-xs font-bold text-white">
+                    {personalInfo.name} // {personalInfo.designation}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="grid size-8 place-items-center rounded-lg bg-accent-soft text-primary shrink-0">
+                <div className="flex items-center gap-3 text-sm text-white">
+                  <div className="grid size-8 place-items-center rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0 border border-cyan-500/20">
                     <Mail className="size-4" />
                   </div>
-                  <a href={`mailto:${personalInfo.email}`} className="font-mono text-xs hover:text-primary transition-colors underline">
+                  <a href={`mailto:${personalInfo.email}`} className="font-mono text-xs text-slate-300 hover:text-cyan-400 transition-colors underline">
                     {personalInfo.email}
                   </a>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="grid size-8 place-items-center rounded-lg bg-accent-soft text-primary shrink-0">
+                <div className="flex items-center gap-3 text-sm text-white">
+                  <div className="grid size-8 place-items-center rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0 border border-cyan-500/20">
                     <Phone className="size-4" />
                   </div>
-                  <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="font-mono text-xs hover:text-primary transition-colors">
+                  <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="font-mono text-xs text-slate-300 hover:text-cyan-400 transition-colors">
                     {personalInfo.phone}
                   </a>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-foreground">
-                  <div className="grid size-8 place-items-center rounded-lg bg-accent-soft text-primary shrink-0">
+                <div className="flex items-center gap-3 text-sm text-white">
+                  <div className="grid size-8 place-items-center rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0 border border-cyan-500/20">
                     <MapPin className="size-4" />
                   </div>
-                  <span className="text-xs font-medium text-muted-foreground">
+                  <span className="text-xs font-mono text-slate-400">
                     {personalInfo.location}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground pl-1">
-                <Sparkles className="size-3.5 text-primary" />
-                <span>Direct response within 24–48 hours</span>
+              <div className="flex items-center gap-2 text-xs font-mono text-slate-400 pl-1">
+                <Sparkles className="size-3.5 text-cyan-400" />
+                <span>DIRECT TELEMETRY RESPONSE WITHIN 24–48 HOURS</span>
               </div>
             </div>
           </div>
 
           {/* Form / Success Card */}
           {status === 'success' ? (
-            <div className="surface-card flex flex-col items-center justify-center p-8 sm:p-12 text-center project-modal-enter">
-              <div className="grid size-16 place-items-center rounded-full bg-accent-soft text-primary mb-5 border border-accent-border">
+            <div className="surface-card flex flex-col items-center justify-center p-8 sm:p-12 text-center project-modal-enter border border-cyan-500/40">
+              <div className="grid size-16 place-items-center rounded-full bg-cyan-500/10 text-cyan-400 mb-5 border border-cyan-500/30">
                 <CheckCircle2 className="size-8" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Message Dispatched!</h3>
-              <p className="mt-3 max-w-md text-sm text-muted-foreground leading-relaxed">
-                Thank you, <span className="font-semibold text-foreground">{formData.name}</span>! I've received your inquiry regarding <span className="font-semibold text-foreground">{formData.reason}</span>. I will review your note and reach back to <span className="font-mono text-xs text-foreground bg-surface px-1.5 py-0.5 rounded border border-border">{formData.email}</span> promptly.
+              <h3 className="text-2xl font-bold text-white font-mono uppercase tracking-wider">Message Dispatched!</h3>
+              <p className="mt-3 max-w-md text-sm text-slate-300 leading-relaxed">
+                Thank you, <span className="font-semibold text-white">{formData.name}</span>! I've received your inquiry regarding <span className="font-semibold text-white">{formData.reason}</span>. I will review your note and reach back to <span className="font-mono text-xs text-cyan-400 bg-slate-950 px-1.5 py-0.5 rounded border border-white/10">{formData.email}</span> promptly.
               </p>
               <button
                 type="button"
                 onClick={handleReset}
-                className="mt-6 rounded-xl bg-foreground text-white px-5 py-2.5 text-xs font-semibold hover:bg-primary transition-colors cursor-pointer"
+                className="mt-6 rounded-xl bg-white text-black font-mono text-xs uppercase tracking-widest font-bold px-5 py-3 hover:bg-cyan-400 transition-colors cursor-pointer"
               >
                 Send another message
               </button>
@@ -165,18 +165,18 @@ export default function Contact() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="surface-card grid gap-4 p-6 sm:p-8"
+              className="surface-card grid gap-4 p-6 sm:p-8 border border-white/15"
               noValidate
             >
               {errorMessage && (
-                <div className="p-3 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive text-xs font-medium">
+                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono">
                   {errorMessage}
                 </div>
               )}
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="grid gap-1.5">
-                  <span className="label-mono text-[11px]">Full Name *</span>
+                  <span className="label-mono text-[11px]">// FULL NAME *</span>
                   <input
                     required
                     maxLength={100}
@@ -184,11 +184,11 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-primary focus:outline-none"
+                    className="w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-cyan-400 focus:outline-none"
                   />
                 </label>
                 <label className="grid gap-1.5">
-                  <span className="label-mono text-[11px]">Email Address *</span>
+                  <span className="label-mono text-[11px]">// EMAIL ADDRESS *</span>
                   <input
                     type="email"
                     required
@@ -197,44 +197,44 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-primary focus:outline-none"
+                    className="w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-cyan-400 focus:outline-none"
                   />
                 </label>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="grid gap-1.5">
-                  <span className="label-mono text-[11px]">Organization / Clinic</span>
+                  <span className="label-mono text-[11px]">// ORGANIZATION / CLINIC</span>
                   <input
                     maxLength={120}
                     placeholder="Company or institution"
                     name="organization"
                     value={formData.organization}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-primary focus:outline-none"
+                    className="w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-cyan-400 focus:outline-none"
                   />
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="label-mono text-[11px]">Reason for Contact</span>
+                  <span className="label-mono text-[11px]">// REASON FOR CONTACT</span>
                   <select
                     name="reason"
                     value={formData.reason}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground transition-colors focus:border-primary focus:outline-none"
+                    className="w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-2.5 text-sm text-white transition-colors focus:border-cyan-400 focus:outline-none"
                   >
-                    <option value="Project Collaboration">Project Collaboration</option>
-                    <option value="AIIENS Health Inquiries">AIIENS Health (Clinics)</option>
-                    <option value="AIIENS Campus Workshops">AIIENS Campus (Education)</option>
-                    <option value="AIIENS Foundation">AIIENS Foundation (Social Impact)</option>
-                    <option value="Speaking / Advisory">Speaking / Advisory</option>
-                    <option value="General Discussion">General Discussion</option>
+                    <option value="Project Collaboration" className="bg-slate-950 text-white">Project Collaboration</option>
+                    <option value="AIIENS Health Inquiries" className="bg-slate-950 text-white">AIIENS Health (Clinics)</option>
+                    <option value="AIIENS Campus Workshops" className="bg-slate-950 text-white">AIIENS Campus (Education)</option>
+                    <option value="AIIENS Foundation" className="bg-slate-950 text-white">AIIENS Foundation (Social Impact)</option>
+                    <option value="Speaking / Advisory" className="bg-slate-950 text-white">Speaking / Advisory</option>
+                    <option value="General Discussion" className="bg-slate-950 text-white">General Discussion</option>
                   </select>
                 </label>
               </div>
 
               <label className="grid gap-1.5">
-                <span className="label-mono text-[11px]">Message *</span>
+                <span className="label-mono text-[11px]">// MESSAGE *</span>
                 <textarea
                   name="message"
                   required
@@ -244,14 +244,14 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Outline your project, idea, or how we might collaborate..."
-                  className="w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-primary focus:outline-none"
+                  className="w-full rounded-xl border border-white/15 bg-slate-950 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-cyan-400 focus:outline-none"
                 />
               </label>
 
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs font-bold text-white shadow-accent transition-all hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-xs font-mono uppercase tracking-widest font-bold text-black shadow-lg transition-all hover:bg-white hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] disabled:opacity-60 cursor-pointer"
               >
                 {status === 'submitting' ? (
                   <>

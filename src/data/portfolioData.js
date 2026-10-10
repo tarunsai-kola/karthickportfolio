@@ -193,30 +193,83 @@ export const projects = [
   }
 ];
 
+export const educationData = [
+  {
+    institution: "Sir CR Reddy College of Engineering (JNTUK)",
+    location: "Eluru, Andhra Pradesh",
+    period: "2021 — 2025",
+    qualification: "B.Tech in Electronics and Communication Engineering",
+    score: "CGPA: 6.48 / 10",
+    badge: "Graduation: 2025"
+  },
+  {
+    institution: "Tirumala Junior College",
+    location: "Vizag, Andhra Pradesh",
+    period: "2019 — 2021",
+    qualification: "Intermediate (MPC), Board of Intermediate Education",
+    score: "Percentage: 78%",
+    badge: "Intermediate"
+  },
+  {
+    institution: "Bhashyam High School",
+    location: "Vizianagaram, Andhra Pradesh",
+    period: "2018 — 2019",
+    qualification: "Secondary School, Board of Secondary Education",
+    score: "CGPA: 9.7 / 10",
+    badge: "Secondary School"
+  }
+];
+
 export const experienceData = [
   {
     period: "2024 — Present",
     role: "Founder & Technology Entrepreneur",
     organization: "AIIENS",
     location: "India",
+    type: "Founder / Leadership",
     description: "Leading product strategy, engineering direction, and execution across AIIENS Health, AIIENS Campus, and AIIENS Foundation. Architecting software platforms, establishing partner clinic workflows, and driving engineering education initiatives.",
-    type: "Leadership"
+    bullets: [
+      "Architected multi-tenant digital clinic operating systems for outpatient healthcare management.",
+      "Spearheaded practical engineering education sprints and community social impact initiatives."
+    ]
   },
   {
-    period: "2022 — 2024",
-    role: "Leadership & Technical Lead",
-    organization: "IEEE Student Branch",
-    location: "India",
-    description: "Organized technical symposia, spearheaded competitive programming bootcamp series, mentored junior engineering cohorts, and coordinated inter-collegiate hackathons.",
-    type: "Leadership"
+    period: "Dec 2024 — May 2025 (6 Mos)",
+    role: "Machine Learning Student Intern",
+    organization: "BIST TECHNOLOGIES",
+    location: "Remote",
+    type: "AI & Machine Learning",
+    description: "Hands-on experience in machine learning model development, data preprocessing, and predictive analysis using real-world datasets.",
+    bullets: [
+      "Performed data cleaning, transformation, and exploratory data analysis (EDA) to extract meaningful insights.",
+      "Implemented and evaluated machine learning algorithms using Python libraries such as Pandas, NumPy, and Scikit-learn.",
+      "Assisted in developing data-driven solutions and improving model performance through feature engineering and optimization.",
+      "Collaborated on AI-based projects, enhancing practical understanding of supervised learning and model evaluation techniques."
+    ]
   },
   {
-    period: "2023 — 2024",
-    role: "Embedded Systems & Technical Intern",
-    organization: "Electronics Engineering Lab",
-    location: "India",
-    description: "Designed microcontroller telemetry modules, calibrated sensor signal conditioning circuits, and optimized serial communication protocols for real-time data capture.",
-    type: "Engineering"
+    period: "June 2024 — July 2024 (2 Mos)",
+    role: "AI & Data Skills Student Intern",
+    organization: "YBI Foundation",
+    location: "Remote",
+    type: "AI & Data Science",
+    description: "Participated in hands-on AI model development, data processing workshops, and real-world predictive modeling.",
+    bullets: [
+      "Contributed to real-world projects, analyzing datasets and implementing machine learning models for insights generation.",
+      "Explored tools like Pandas, NumPy, and Scikit-learn to enhance data manipulation and prediction accuracy."
+    ]
+  },
+  {
+    period: "May 2023 — June 2023 (2 Mos)",
+    role: "CNS Student Intern",
+    organization: "Airports Authority of India",
+    location: "Vijayawada, India",
+    type: "Avionics & Electronics",
+    description: "Collaborated with technical engineering teams to analyze and troubleshoot Communication, Navigation, and Surveillance (CNS) systems.",
+    bullets: [
+      "Assisted in troubleshooting and maintaining radar and communication equipment, gaining exposure to aviation-grade electronics.",
+      "Documented technical workflows and created detailed reports for ongoing system improvements."
+    ]
   }
 ];
 
@@ -230,33 +283,9 @@ export const achievementsData = [
   },
   {
     title: "Bachelor of Technology in ECE",
-    issuer: "Electronics and Communication Engineering",
-    year: "Graduation: 2025",
-    description: "Completed rigorous engineering training across digital signal processing, embedded architectures, communication systems, and software engineering.",
-    badge: "Class of 2025"
-  }
-];
-
-export const insightsData = [
-  {
-    id: "1",
-    title: "Why Clinic Software in Emerging Markets Must Be Offline-First",
-    category: "Healthcare Tech",
-    readTime: "4 min read",
-    summary: "Reflections from visiting community clinics: how intermittent connectivity shapes user interfaces, and why synchronous cloud architectures fail frontline doctors."
-  },
-  {
-    id: "2",
-    title: "Bridging the Engineering Skill Gap Through Project Sprints",
-    category: "Education",
-    readTime: "5 min read",
-    summary: "How hands-on project roadmaps transform theoretical syllabus knowledge into deployable engineering intuition for undergraduate engineers."
-  },
-  {
-    id: "3",
-    title: "Rebuilding Trust in Public Healthcare Fundraising",
-    category: "Social Impact",
-    readTime: "6 min read",
-    summary: "Why transparency ledgers and direct clinical invoice verification are essential to reviving donor confidence in charitable healthcare support."
+    issuer: "Sir CR Reddy College of Engineering (JNTUK)",
+    year: "2021 - 2025",
+    description: "Completed rigorous engineering training across digital signal processing, embedded architectures, machine learning, and communication systems.",
+    badge: "CGPA: 6.48 / 10"
   }
 ];
