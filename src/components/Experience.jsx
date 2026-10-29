@@ -85,13 +85,10 @@ export default function Experience() {
                   </p>
                 </div>
 
-                {/* Right side: Period & CGPA Pill */}
-                <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0 mt-1 sm:mt-0">
-                  <span className="text-xs font-mono tracking-wider text-slate-500 group-hover:text-slate-300 transition-colors">
+                {/* Right side: Period / Dates */}
+                <div className="sm:text-right shrink-0 mt-1 sm:mt-0">
+                  <span className="text-xs font-mono tracking-wider text-slate-500 group-hover:text-cyan-400/80 transition-colors">
                     {edu.period}
-                  </span>
-                  <span className="rounded-md bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-0.5 text-xs font-mono font-bold text-cyan-400">
-                    {edu.score}
                   </span>
                 </div>
               </div>
