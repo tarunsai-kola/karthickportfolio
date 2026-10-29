@@ -3,61 +3,94 @@ import confetti from 'canvas-confetti';
 import { Send, MapPin, Loader2, CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
-// Custom icons matching Canva styling
-function WhatsAppIcon({ className = "size-7" }) {
+// Real Colorful Brand Logos
+function WhatsAppRealLogo() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-    </svg>
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3 shadow-[0_4px_22px_rgba(37,211,102,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(37,211,102,0.7)]"
+      style={{ background: 'linear-gradient(135deg, #2fe577 0%, #25D366 50%, #128C7E 100%)' }}
+    >
+      <svg viewBox="0 0 32 32" fill="white" className="size-8 sm:size-9">
+        <path d="M16.02 3C8.83 3 3 8.83 3 16.02c0 2.4.65 4.65 1.78 6.6L3 29l6.58-1.72a12.94 12.94 0 0 0 6.44 1.71c7.19 0 13.02-5.83 13.02-13.02C29.04 8.83 23.21 3 16.02 3zm0 23.82c-2.14 0-4.14-.6-5.86-1.63l-.42-.25-4.36 1.14 1.16-4.25-.27-.44A10.8 10.8 0 0 1 5.2 16.02c0-5.97 4.85-10.82 10.82-10.82 5.97 0 10.82 4.85 10.82 10.82 0 5.97-4.85 10.82-10.82 10.82zm5.93-8.11c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.74.16-.22.33-.85 1.06-1.04 1.28-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.63-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.51.14-.67.15-.15.33-.38.5-.58.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.58-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.34 3.4c.16.22 2.32 3.54 5.62 4.97.79.34 1.4.54 1.88.7.79.25 1.51.22 2.08.13.64-.1 1.93-.79 2.2-1.55.27-.77.27-1.42.19-1.55-.08-.13-.3-.22-.63-.38z" />
+      </svg>
+    </div>
   );
 }
 
-function EmailAtIcon({ className = "size-7" }) {
+function GmailRealLogo() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-      <circle cx="12" cy="13" r="2.5" />
-    </svg>
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3.5 bg-white shadow-[0_4px_22px_rgba(234,67,53,0.35)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(234,67,53,0.65)]"
+    >
+      <svg viewBox="0 0 48 48" className="size-8 sm:size-9">
+        {/* Google Blue left pillar */}
+        <path fill="#4285F4" d="M6 39.5c0 1.9 1.6 3.5 3.5 3.5H13V24.3l-7-5.3V39.5z" />
+        {/* Google Green right pillar */}
+        <path fill="#34A853" d="M38.5 43c1.9 0 3.5-1.6 3.5-3.5V19l-7 5.3V43h3.5z" />
+        {/* Google Red top fold */}
+        <path fill="#EA4335" d="M13 14.3v10l11 8.2 11-8.2v-10l-11-8.3-11 8.3z" />
+        {/* Yellow fold accent */}
+        <path fill="#FBBC05" d="M13 14.3v10L6 19v-6.3c0-2.4 2.6-3.9 4.7-2.7l2.3 4.3z" />
+        {/* Deep red fold accent */}
+        <path fill="#C5221F" d="M35 14.3v10l7-5.3v-6.3c0-2.4-2.6-3.9-4.7-2.7l-2.3 4.3z" />
+      </svg>
+    </div>
   );
 }
 
-function LinkedInBoxIcon({ className = "size-7" }) {
+function LinkedInRealLogo() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <rect x="2" y="2" width="20" height="20" rx="4" />
-      <path d="M7 10v7" />
-      <circle cx="7" cy="6.5" r="1" fill="currentColor" />
-      <path d="M11 17v-7h3.5v1.2a3 3 0 0 1 2.5-1.2c2 0 3 1.2 3 3.5V17h-3.5v-3.5c0-.8-.3-1.5-1.2-1.5-.8 0-1.3.7-1.3 1.5V17H11z" />
-    </svg>
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3 shadow-[0_4px_22px_rgba(10,102,194,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(10,102,194,0.7)]"
+      style={{ background: 'linear-gradient(135deg, #0077b5 0%, #0A66C2 100%)' }}
+    >
+      <svg viewBox="0 0 24 24" fill="white" className="size-8 sm:size-9">
+        <circle cx="4.983" cy="5.009" r="2.188" />
+        <path d="M9.237 8.855v12.136h3.769v-6.009c0-1.584.302-3.118 2.27-3.118 1.94 0 1.966 1.815 1.966 3.218v5.909h3.769V14.39c0-3.238-.696-5.731-4.475-5.731-1.816 0-3.031.998-3.528 1.941h-.051V8.855H9.237zM3.1 8.855h3.769v12.136H3.1z" />
+      </svg>
+    </div>
   );
 }
 
-function XTwitterIcon({ className = "size-7" }) {
+function XTwitterRealLogo() {
   return (
-    <div className="size-10 sm:size-11 rounded-full border-[1.8px] border-white flex items-center justify-center p-2">
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-white">
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3.5 bg-[#0a0a0a] border border-white/25 shadow-[0_4px_22px_rgba(255,255,255,0.15)] transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-400/60 group-hover:shadow-[0_8px_30px_rgba(0,210,255,0.4)]"
+    >
+      <svg viewBox="0 0 24 24" fill="white" className="size-7 sm:size-8">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     </div>
   );
 }
 
-function InstagramOutlineIcon({ className = "size-7" }) {
+function InstagramRealLogo() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <rect x="2" y="2" width="20" height="20" rx="5" />
-      <circle cx="12" cy="12" r="4.5" />
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-    </svg>
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3 shadow-[0_4px_22px_rgba(214,36,159,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(214,36,159,0.7)]"
+      style={{
+        background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)'
+      }}
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-8 sm:size-9">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    </div>
   );
 }
 
-function PhoneHandsetIcon({ className = "size-7" }) {
+function PhoneRealLogo() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
+    <div 
+      className="size-14 sm:size-16 rounded-[18px] flex items-center justify-center p-3 shadow-[0_4px_22px_rgba(16,185,129,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_8px_30px_rgba(16,185,129,0.7)]"
+      style={{ background: 'linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%)' }}
+    >
+      <svg viewBox="0 0 24 24" fill="white" className="size-7 sm:size-8">
+        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.57 3.9c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.52c0-.55-.45-1-.99-1z" />
+      </svg>
+    </div>
   );
 }
 
@@ -169,7 +202,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* 6 Social / Contact Buttons in 2 rows */}
+            {/* 6 Real Colorful Social / Contact Buttons in 2 rows */}
             <div className="mt-12 grid grid-cols-3 gap-6 sm:gap-8 max-w-md">
               
               {/* WhatsApp */}
@@ -177,24 +210,25 @@ export default function Contact() {
                 href="https://wa.me/918297874231"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Connect on WhatsApp"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex flex-col items-center justify-center transition-transform group-hover:scale-110">
-                  <WhatsAppIcon className="size-9 sm:size-10" />
-                  <span className="mt-1 text-[11px] font-sans font-bold tracking-tight text-white group-hover:text-cyan-400">
-                    WhatsApp
-                  </span>
-                </div>
+                <WhatsAppRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-[#25D366] transition-colors">
+                  WhatsApp
+                </span>
               </a>
 
-              {/* Email */}
+              {/* Email / Gmail */}
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Send an Email"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
-                  <EmailAtIcon className="size-10 sm:size-11" />
-                </div>
+                <GmailRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-[#EA4335] transition-colors">
+                  Gmail
+                </span>
               </a>
 
               {/* LinkedIn */}
@@ -202,11 +236,13 @@ export default function Contact() {
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Connect on LinkedIn"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
-                  <LinkedInBoxIcon className="size-10 sm:size-11" />
-                </div>
+                <LinkedInRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-[#0A66C2] transition-colors">
+                  LinkedIn
+                </span>
               </a>
 
               {/* X / Twitter */}
@@ -214,11 +250,13 @@ export default function Contact() {
                 href={personalInfo.socials.twitter}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Follow on X"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
-                  <XTwitterIcon className="size-10 sm:size-11" />
-                </div>
+                <XTwitterRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-cyan-400 transition-colors">
+                  X
+                </span>
               </a>
 
               {/* Instagram */}
@@ -226,21 +264,25 @@ export default function Contact() {
                 href={personalInfo.socials.instagram}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Follow on Instagram"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
-                  <InstagramOutlineIcon className="size-10 sm:size-11" />
-                </div>
+                <InstagramRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-[#E4405F] transition-colors">
+                  Instagram
+                </span>
               </a>
 
               {/* Phone */}
               <a
                 href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                className="flex flex-col items-center justify-center text-white hover:text-cyan-400 transition-colors group"
+                className="flex flex-col items-center justify-center group cursor-pointer"
+                title="Call Directly"
               >
-                <div className="size-16 sm:size-18 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
-                  <PhoneHandsetIcon className="size-10 sm:size-11" />
-                </div>
+                <PhoneRealLogo />
+                <span className="mt-2 text-[11px] sm:text-xs font-mono font-semibold tracking-wide text-white/90 group-hover:text-[#10B981] transition-colors">
+                  Call
+                </span>
               </a>
 
             </div>
