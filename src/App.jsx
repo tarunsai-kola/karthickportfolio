@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import AiiensBrand from './components/AiiensBrand';
 import Work from './components/Work';
-import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
@@ -39,20 +39,17 @@ export default function App() {
     : null;
 
   return (
-    <div className="min-h-dvh overflow-x-hidden font-sans bg-background text-foreground selection:bg-primary/15 selection:text-primary">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-cyan-500/20 selection:text-cyan-300">
       {/* Sticky Top Header */}
       <Header />
 
       {/* Main Sections */}
       <main>
-        <Hero onSelectInitiative={(id) => {
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }} />
+        <Hero />
         <About />
+        <Experience />
         <AiiensBrand />
         <Work onSelectProject={setSelectedProjectId} />
-        <Experience />
         <Contact />
       </main>
 

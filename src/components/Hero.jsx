@@ -1,120 +1,174 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Activity, GraduationCap, HeartHandshake, ShieldCheck } from 'lucide-react';
-import { personalInfo, aiiensBrand } from '../data/portfolioData';
 
-export default function Hero({ onSelectInitiative }) {
+export default function Hero() {
   return (
-    <section id="hero" className="hero-wash px-5 pb-16 pt-32 sm:px-8 sm:pb-24 sm:pt-40 text-white">
-      <div className="mx-auto w-full max-w-6xl">
-        <div className="flex flex-col items-center gap-10 text-center lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:text-left">
-          {/* Main Hero Copy */}
-          <div className="order-2 max-w-3xl rise lg:order-1">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-mono text-cyan-400 font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(0,240,255,0.15)]">
-              <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span>// SYSTEM: {personalInfo.identity}</span>
-            </div>
+    <section 
+      id="home" 
+      className="relative min-h-[92vh] sm:min-h-screen bg-black text-white flex flex-col justify-center items-center px-4 pt-28 pb-16 overflow-hidden select-none"
+    >
+      {/* Background Starfield / Cosmic Nebula Glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Subtle radial center ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-b from-cyan-900/10 via-blue-900/10 to-transparent blur-[140px] opacity-70" />
+      </div>
 
-            <h1 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-6xl text-white leading-[1.08]">
-              {personalInfo.heroHeading}
-            </h1>
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center justify-center text-center">
+        
+        {/* Stylized AIIENS Logo */}
+        <div className="w-full max-w-2xl px-4 flex items-center justify-center">
+          <svg
+            viewBox="0 0 640 140"
+            className="w-full max-w-[560px] h-auto drop-shadow-[0_0_25px_rgba(0,180,255,0.2)]"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Letter 'A' (Inverted chevron without crossbar) */}
+            <path
+              d="M 20 125 L 75 15 L 130 125"
+              stroke="#ffffff"
+              strokeWidth="20"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
 
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0">
-              {personalInfo.heroSubtitle}
-            </p>
+            {/* Letter 'I' 1 */}
+            <line
+              x1="180"
+              y1="15"
+              x2="180"
+              y2="125"
+              stroke="#ffffff"
+              strokeWidth="20"
+              strokeLinecap="round"
+            />
 
-            {/* Brand Motto Bar */}
-            <div className="mt-5 inline-flex items-center gap-2 text-xs font-mono text-slate-300 bg-slate-900/80 px-3.5 py-1.5 rounded-lg border border-white/10 backdrop-blur-md">
-              <span className="font-semibold text-white">BRAND: {personalInfo.brandName}</span>
-              <span className="text-cyan-500">//</span>
-              <span className="text-cyan-400 font-medium">"{personalInfo.tagline}"</span>
-            </div>
+            {/* Letter 'I' 2 */}
+            <line
+              x1="235"
+              y1="15"
+              x2="235"
+              y2="125"
+              stroke="#ffffff"
+              strokeWidth="20"
+              strokeLinecap="round"
+            />
 
-            {/* 3 Call-To-Action Buttons */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <a
-                className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-mono uppercase tracking-widest font-bold transition-all duration-300 bg-cyan-400 text-black px-6 py-3.5 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-[1.02] arrow-nudge"
-                href="#aiiens"
-              >
-                <span>Explore AIIENS</span>
-                <ArrowRight className="size-4" />
-              </a>
+            {/* Letter 'E' (3 Cyan Horizontal Bars) */}
+            <line
+              x1="290"
+              y1="25"
+              x2="375"
+              y2="25"
+              stroke="#0084ff"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            <line
+              x1="290"
+              y1="70"
+              x2="375"
+              y2="70"
+              stroke="#00aaff"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            <line
+              x1="290"
+              y1="115"
+              x2="375"
+              y2="115"
+              stroke="#00d2ff"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
 
-              <a
-                className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-mono uppercase tracking-widest font-bold transition-all duration-300 border border-white/30 bg-white/5 text-white px-6 py-3.5 hover:bg-white hover:text-black arrow-nudge"
-                href="#about"
-              >
-                <span>About Me</span>
-              </a>
+            {/* Letter 'N' */}
+            <path
+              d="M 430 125 L 430 15 L 500 125 L 500 15"
+              stroke="#ffffff"
+              strokeWidth="19"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
 
-              <a
-                className="inline-flex items-center justify-center gap-2 rounded-xl text-xs font-mono uppercase tracking-widest font-semibold transition-all duration-300 border border-white/15 bg-slate-900/50 text-slate-400 px-6 py-3.5 hover:text-cyan-400 hover:border-cyan-400/50 arrow-nudge"
-                href="#contact"
-              >
-                <span>Connect With Me</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Hero Portrait with SpaceX Technical Frame */}
-          <div className="order-1 shrink-0 lg:order-2">
-            <div className="relative">
-              {/* Subtle Cyan Glow Backdrop */}
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-blue-500/20 to-cyan-500/30 blur-2xl opacity-60" />
-
-              <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-slate-950 p-2 shadow-2xl ring-1 ring-white/10">
-                <div className="relative mx-auto aspect-3/4 w-44 overflow-hidden rounded-2xl sm:w-56 md:w-64 lg:w-80">
-                  <img
-                    alt="Karthikeya Pantam, Founder & Technology Entrepreneur"
-                    className="object-cover object-top w-full h-full transition-transform duration-700 hover:scale-105"
-                    src={personalInfo.profileImage}
-                  />
-                  {/* SpaceX Telemetry Badge Overlay */}
-                  <div className="absolute bottom-3 inset-x-3 rounded-xl bg-slate-950/90 backdrop-blur-md px-3 py-2 text-white border border-white/15 flex items-center justify-between shadow-2xl">
-                    <div>
-                      <p className="text-xs font-bold leading-tight tracking-wide">{personalInfo.name}</p>
-                      <p className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider">FOUNDER // {personalInfo.brandName}</p>
-                    </div>
-                    <span className="size-2 rounded-full bg-cyan-400 animate-ping" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            {/* Letter 'S' */}
+            <path
+              d="M 605 38 C 605 22, 580 15, 560 15 C 535 15, 532 30, 532 45 C 532 75, 605 65, 605 95 C 605 115, 585 125, 555 125 C 532 125, 528 110, 528 100"
+              stroke="#ffffff"
+              strokeWidth="19"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
 
-        {/* SpaceX Telemetry Initiative Cards */}
-        <div className="mt-14 grid gap-4 sm:mt-20 sm:grid-cols-3">
-          {aiiensBrand.initiatives.map((item, index) => (
-            <a
-              key={item.id}
-              href="#aiiens"
-              className="reveal surface-card p-5 group flex flex-col justify-between hover:border-cyan-400/50 cursor-pointer"
-              data-visible="true"
-              style={{ '--reveal-delay': `${index * 80}ms` }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="size-12 shrink-0 rounded-xl overflow-hidden bg-slate-950 p-1 border border-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <img src={item.logo} alt={item.name} className="w-full h-full object-contain" />
-                </div>
-                <div>
-                  <span className="inline-block rounded-md px-2 py-0.5 text-[10px] font-mono font-medium border bg-cyan-500/10 text-cyan-400 border-cyan-500/30 uppercase tracking-wider">
-                    {item.category}
-                  </span>
-                  <h3 className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors mt-0.5">
-                    {item.name}
-                  </h3>
-                </div>
-              </div>
-              <p className="mt-3 text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                {item.description}
-              </p>
-              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-cyan-400 group-hover:underline uppercase tracking-wider">
-                <span>Explore Initiative</span>
-                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-              </div>
-            </a>
-          ))}
+        {/* Subtitle / Expansion Tagline */}
+        <div className="mt-6 px-4">
+          <p className="text-xs sm:text-base font-sans tracking-[0.22em] sm:tracking-[0.28em] text-white/90 font-medium uppercase leading-relaxed">
+            ADVANCED INTELLIGENCE INTEGRATION
+          </p>
+          <p className="text-xs sm:text-base font-sans tracking-[0.22em] sm:tracking-[0.28em] text-white/90 font-medium uppercase mt-1">
+            FOR ENHANCED NETWORK SYSTEMS
+          </p>
         </div>
+
+        {/* Glowing Horizon Arc & Lens Flare */}
+        <div className="relative w-full max-w-4xl mt-10 mb-6 flex items-center justify-center">
+          {/* Intense Lens Flare Core Glow */}
+          <div className="pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 w-[480px] h-24 bg-blue-500 blur-3xl opacity-40" />
+          <div className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 w-36 h-8 bg-cyan-400 blur-lg opacity-85 animate-pulse" />
+          <div className="pointer-events-none absolute -top-[1px] left-1/2 -translate-x-1/2 w-64 sm:w-80 h-[2px] bg-gradient-to-r from-transparent via-cyan-100 to-transparent blur-[0.5px] shadow-[0_0_15px_#ffffff]" />
+
+          {/* Curved Horizon SVG Arc */}
+          <svg
+            viewBox="0 0 1000 80"
+            className="w-full h-auto overflow-visible"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="horizonGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00d2ff" stopOpacity="0" />
+                <stop offset="25%" stopColor="#0084ff" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="#00f0ff" stopOpacity="1" />
+                <stop offset="75%" stopColor="#0084ff" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#00d2ff" stopOpacity="0" />
+              </linearGradient>
+              <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            {/* Glowing atmosphere halo under curve */}
+            <path
+              d="M 50 75 Q 500 5 950 75"
+              stroke="#0084ff"
+              strokeWidth="6"
+              strokeOpacity="0.3"
+              filter="url(#glowFilter)"
+            />
+
+            {/* Sharp glowing top arc */}
+            <path
+              d="M 50 75 Q 500 5 950 75"
+              stroke="url(#horizonGlowGrad)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
+        {/* Tagline below horizon */}
+        <div className="mt-2">
+          <h2 className="text-sm sm:text-xl font-bold font-sans tracking-[0.32em] sm:tracking-[0.4em] text-cyan-400 uppercase">
+            BUILD SOMETHING USEFUL
+          </h2>
+        </div>
+
       </div>
     </section>
   );

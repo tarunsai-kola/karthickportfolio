@@ -1,163 +1,167 @@
-/* Karthikeya Pantam — SpaceX-Inspired Futuristic Theme Stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: 'Space Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Syncopate', 'Orbitron', 'Space Grotesk', sans-serif;
+  --font-orbitron: 'Orbitron', monospace;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* SpaceX Pitch Dark Palette */
-  --color-background: #030712;
-  --color-foreground: #f8fafc;
-  --color-card: #090d16;
-  --color-surface: #0f172a;
-  --color-surface-hover: #1e293b;
-  --color-charcoal: #030712;
-  --color-charcoal-card: #0b0f19;
-  
-  /* SpaceX Accents: Electric Cyan, Crisp White, Deep Space Blue */
-  --color-primary: #00f0ff;
-  --color-primary-hover: #38bdf8;
-  --color-primary-foreground: #000000;
-  --color-cyan-glow: #00f0ff;
-  --color-accent-soft: rgba(0, 240, 255, 0.08);
-  --color-accent-border: rgba(0, 240, 255, 0.25);
-  
-  --color-muted-foreground: #94a3b8;
-  --color-border: rgba(255, 255, 255, 0.12);
-  --color-border-strong: rgba(255, 255, 255, 0.25);
-  --color-ring: #00f0ff;
-
-  /* Shadows & Space Glow */
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.5);
-  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  --shadow-lift: 0 20px 40px -10px rgba(0, 240, 255, 0.15), 0 0 20px rgba(0, 240, 255, 0.1);
-  --shadow-nav: 0 10px 30px rgba(0, 0, 0, 0.8);
-  --shadow-accent: 0 0 25px rgba(0, 240, 255, 0.35);
+  --color-brand-black: #000000;
+  --color-brand-cyan: #00d2ff;
+  --color-brand-cyan-light: #5ce1e6;
+  --color-brand-blue: #0084ff;
+  --color-surface-dark: #080c14;
+  --color-card-border: rgba(0, 210, 255, 0.25);
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #030712;
-  color: #f8fafc;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 body {
-  background-color: #030712;
-  color: #f8fafc;
+  background-color: #000000;
+  color: #ffffff;
   font-family: var(--font-sans);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* SpaceX Cosmic Starfield Grid & Orbital Horizon Wash */
-.hero-wash {
-  position: relative;
-  background-color: #02040a;
-  background-image: 
-    radial-gradient(ellipse 90% 40% at 50% -10%, rgba(0, 210, 255, 0.2), transparent 70%),
-    radial-gradient(circle at 85% 15%, rgba(0, 168, 255, 0.12), transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(6, 182, 212, 0.1), transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+/* Custom Typography */
+.font-display {
+  font-family: 'Syncopate', 'Orbitron', 'Space Grotesk', sans-serif;
 }
 
-.orbital-glow-line {
-  position: relative;
+.font-orbitron {
+  font-family: 'Orbitron', monospace, sans-serif;
 }
 
-.orbital-glow-line::after {
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Cosmic Glowing Horizon Line */
+.celestial-horizon {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.celestial-horizon::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 210, 255, 0.4) 20%, rgba(0, 240, 255, 1) 50%, rgba(0, 210, 255, 0.4) 80%, transparent 100%);
-  box-shadow: 0 0 25px 3px rgba(0, 240, 255, 0.8), 0 0 50px 10px rgba(0, 168, 255, 0.4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(0, 210, 255, 0.35) 0%, rgba(0, 132, 255, 0.15) 45%, transparent 75%);
+  filter: blur(20px);
+  pointer-events: none;
 }
 
-.charcoal-hero-card {
-  background: linear-gradient(145deg, #0f172a 0%, #030712 100%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.15);
+/* Cyan Glowing Borders and Accents */
+.cyan-glow-border {
+  border: 2px solid #00d2ff;
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.45), inset 0 0 15px rgba(0, 210, 255, 0.15);
 }
 
-.surface-panel {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-card);
-  border-radius: 24px;
+.cyan-box-shadow {
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
 }
 
-.surface-card {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow-soft);
+.cyan-btn-glow {
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cyan-btn-glow:hover {
+  box-shadow: 0 0 35px rgba(0, 210, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Futuristic Terminal Panel */
+.cyber-card {
+  background: #03060d;
+  border: 1px solid rgba(0, 210, 255, 0.3);
   border-radius: 20px;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 210, 255, 0.15);
 }
 
-.surface-card:hover {
-  border-color: rgba(0, 240, 255, 0.4);
-  box-shadow: var(--shadow-lift);
-  background: rgba(15, 23, 42, 0.9);
+.cyber-card-subtle {
+  background: #050811;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
 }
 
-.label-mono {
-  font-family: var(--font-mono);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #00f0ff;
-  font-size: 0.75rem;
-  font-weight: 600;
+.cyber-card-subtle:hover {
+  border-color: rgba(0, 210, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
 }
 
-.lift-hover {
-  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.32s ease;
+/* Glassmorphism Navigation */
+.header-glass {
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 210, 255, 0.1);
 }
 
-.lift-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
+/* Form Input Styling */
+.cyber-input {
+  background-color: #040711;
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  border-radius: 10px;
+  color: #ffffff;
+  transition: all 0.25s ease;
 }
 
-.arrow-nudge svg:last-child {
-  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+.cyber-input:focus {
+  border-color: #00d2ff;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
+  outline: none;
 }
 
-.arrow-nudge:hover svg:last-child {
-  transform: translateX(4px);
+/* Subtle line divider */
+.journey-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0ms);
+/* Squircles */
+.squircle-card {
+  border-radius: 36px;
+  background: #ffffff;
 }
 
-.reveal[data-visible="true"] {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.rise {
-  animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
+/* Animations */
+@keyframes subtle-float {
+  0%, 100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-lens {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.animate-lens {
+  animation: pulse-lens 4s ease-in-out infinite;
 }
