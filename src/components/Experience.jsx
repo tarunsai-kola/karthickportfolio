@@ -1,5 +1,4 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Award, MapPin } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -52,65 +51,46 @@ export default function Experience() {
     <section id="experience" className="relative scroll-mt-24 px-4 py-16 sm:px-8 sm:py-24 bg-black text-white">
       <div className="mx-auto w-full max-w-5xl">
         
-        {/* 1. ACADEMIC EDUCATION & STUDY (ABOVE EXPERIENCES) */}
+        {/* 1. ACADEMIC EDUCATION & STUDY (LINE BY LINE — SAME THEME AS EXPERIENCE) */}
         <div className="mb-20">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
-            <div>
-              <span className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">
-                // ACADEMIC STUDY
-              </span>
-              <h2 className="mt-2 text-2xl sm:text-4xl font-display font-bold tracking-tight text-white uppercase">
-                Education &amp; Qualifications
-              </h2>
-            </div>
-            
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/20 px-3.5 py-1 text-xs font-mono text-cyan-400 self-start sm:self-auto">
-              <GraduationCap className="size-3.5" />
-              <span>ELECTRONICS &amp; COMMUNICATION</span>
-            </div>
+          <div className="mb-8 text-left">
+            <span className="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">
+              // ACADEMIC STUDY
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-display font-bold tracking-tight text-white uppercase">
+              Education &amp; Qualifications
+            </h2>
           </div>
 
-          {/* Education Cards Grid */}
-          <div className="grid gap-4 sm:grid-cols-3">
+          {/* Education Line-by-Line List with Dividers */}
+          <div className="divide-y divide-white/10 border-t border-b border-white/10">
             {educationData.map((edu, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#040711] p-5 sm:p-6 transition-all duration-300 hover:border-cyan-400/50 hover:bg-[#070b19] hover:shadow-[0_0_25px_rgba(0,210,255,0.15)]"
+                className="py-6 sm:py-8 flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-6 group transition-colors hover:bg-white/[0.02] px-3 -mx-3 rounded-xl"
               >
-                <div>
-                  {/* Top Bar: Period & Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-mono text-slate-400">
-                      {edu.period}
+                <div className="flex-1">
+                  {/* Degree and Institution */}
+                  <h3 className="text-base sm:text-lg font-sans font-bold text-white tracking-tight flex items-center flex-wrap gap-2">
+                    <span>{edu.qualification}</span>
+                    <span className="text-slate-500 font-normal">·</span>
+                    <span className="text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      {edu.institution}
                     </span>
-                    <span className="rounded-md bg-white/5 border border-white/10 px-2 py-0.5 text-[10px] font-mono text-slate-300 uppercase">
-                      {edu.badge}
-                    </span>
-                  </div>
-
-                  {/* College / School Institution */}
-                  <h3 className="text-sm sm:text-base font-orbitron font-bold text-white group-hover:text-cyan-400 transition-colors">
-                    {edu.institution}
                   </h3>
 
-                  {/* Degree / Qualification */}
-                  <p className="mt-2 text-xs text-slate-300 font-sans leading-relaxed">
-                    {edu.qualification}
+                  {/* Location & Details */}
+                  <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
+                    {edu.location}
                   </p>
-
-                  {/* Location */}
-                  <div className="mt-3 flex items-center gap-1.5 text-[11px] font-mono text-slate-500">
-                    <MapPin className="size-3 text-cyan-400" />
-                    <span>{edu.location}</span>
-                  </div>
                 </div>
 
-                {/* Score / CGPA Highlight Pill */}
-                <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                    ACADEMIC SCORE
+                {/* Right side: Period & CGPA Pill */}
+                <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 shrink-0 mt-1 sm:mt-0">
+                  <span className="text-xs font-mono tracking-wider text-slate-500 group-hover:text-slate-300 transition-colors">
+                    {edu.period}
                   </span>
-                  <span className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-1 text-xs font-mono font-bold text-cyan-400 shadow-[0_0_10px_rgba(0,210,255,0.15)]">
+                  <span className="rounded-md bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-0.5 text-xs font-mono font-bold text-cyan-400">
                     {edu.score}
                   </span>
                 </div>
